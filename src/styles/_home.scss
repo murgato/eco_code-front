@@ -1,0 +1,107 @@
+.container-home {
+  @include container;
+
+  .row {
+    display: flex;
+
+    > input {
+      width: 65%;
+      margin-right: 5%;
+    }
+
+    > select {
+      @include input;
+      width: 30%;
+    }
+
+    .date-container {
+      width: 50%;
+      margin-right: 5%;
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        width: 42%;
+      }
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: flex-end;
+      width: 50%;
+
+      button:first-child {
+        @include btn-primary;
+        margin-right: 5px;
+      }
+
+      button {
+        @include btn-secondary;
+      }
+    }
+
+
+    input {
+      @include input;
+    }
+  }
+
+  .list {
+    height: 100%;
+    padding: 20px;
+
+    .header-list {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin-bottom: 15px;
+
+
+      div {
+        width: calc(100% / 6);
+      }
+    }
+
+    .body-list {
+      .card {
+        background-color: #fff;
+        margin-bottom: 15px;
+        border-radius: $border-radius;
+        @include box-shadow;
+        border: 1px solid $border-color;
+      }
+
+      .item {
+        display: flex;
+        margin-bottom: 10px;
+        padding: 15px 0px;
+
+        div {
+          text-align: center;
+          width: calc(100% / 6);
+        }
+
+        button {
+          background: unset;
+          border: unset;
+          cursor: pointer;
+        }
+      }
+      .actions {
+        div {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          margin: 10px;
+        }
+
+        button {
+          @include btn-secondary;
+        }
+        hr {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

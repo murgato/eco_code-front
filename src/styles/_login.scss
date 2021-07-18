@@ -1,0 +1,28 @@
+.container-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  flex-direction: column;
+
+  > img {
+    max-width: 300px;
+    margin-bottom: 50px;
+  }
+
+  form {
+    max-width: 350px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    input {
+      @include input;
+      width: 350px;
+    }
+
+    button {
+      @include btn-primary;
+    }
+  }
+}

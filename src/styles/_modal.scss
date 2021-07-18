@@ -1,0 +1,33 @@
+.modal {
+  position: absolute;
+  width: 600px;
+  background: $background;
+  border: 2px solid $border-color;
+  border-radius: $border-radius;
+  padding: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  input {
+    @include input;
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: 35px;
+  }
+
+  .btn-container {
+    @include btn-container;
+    justify-content: center;
+    margin-top: 35px;
+  }
+
+  button {
+    @include btn-primary;
+  }
+}

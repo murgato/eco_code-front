@@ -1,0 +1,127 @@
+@mixin btn-primary {
+  width: 210px;
+  height: 40px;
+  color: #FFF;
+  background: $primary-color;
+  border-radius: $border-radius;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  &:hover {
+    cursor: pointer;
+    background: $secondary-color;
+  }
+}
+
+@mixin btn-secondary {
+  @include btn-primary;
+  background: $background;
+  color: black;
+  border: 1px solid $primary-color;
+  &:hover {
+    border: none;
+    color: #FFFFFF;
+  }
+}
+
+@mixin input {
+  border-radius: $border-radius;
+  height: 33px;
+  margin-bottom: 35px;
+  padding-left: 10px;
+  border: 1px solid $border-color;
+
+  &:focus {
+    @include box-shadow;
+  }
+
+  &:focus-visible {
+    outline: unset;
+  }
+}
+
+@mixin btn-container {
+  display: flex;
+  justify-content: flex-end;
+
+  button:first-child {
+    @include btn-primary;
+    margin-right: 5px;
+  }
+
+  button {
+    @include btn-secondary;
+  }
+}
+
+@mixin list {
+  height: 100%;
+  padding: 20px;
+
+  .header-list {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 15px;
+
+
+    div {
+      width: calc(100% / 6);
+    }
+  }
+
+  .body-list {
+    .card {
+      background-color: #fff;
+      margin-bottom: 15px;
+      border-radius: $border-radius;
+      padding-bottom: 5px;
+      @include box-shadow;
+      border: 1px solid $border-color;
+    }
+
+    .item {
+      display: flex;
+      margin-bottom: 10px;
+      padding: 15px 0px;
+
+      div {
+        text-align: center;
+        width: calc(100% / 6);
+      }
+
+      button {
+        background: unset;
+        border: unset;
+        cursor: pointer;
+      }
+    }
+
+    .actions {
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+      }
+
+      button {
+        @include btn-secondary;
+      }
+
+      hr {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: 3px 5px 5px -5px rgba(0, 0, 0, 0.5);
+}
+
+@mixin container {
+  padding-left: 60px;
+  padding-right: 60px;
+}

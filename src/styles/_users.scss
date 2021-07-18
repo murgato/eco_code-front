@@ -1,0 +1,40 @@
+.container-user {
+  @include container;
+
+  .row {
+    display: flex;
+
+    > input {
+      @include input;
+      width: 100%;
+    }
+  }
+
+  select {
+    @include input;
+    width: 30%;
+  }
+
+  .btn-container {
+    @include btn-container;
+    width: 70%;
+  }
+
+  .list {
+    @include list;
+
+    .header-list {
+      div {
+        width: calc(100% / 5);
+      }
+    }
+
+    .body-list {
+      .item {
+        div {
+          width: calc(100% / 5);
+        }
+      }
+    }
+  }
+}

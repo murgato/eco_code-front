@@ -1,0 +1,30 @@
+@import "variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+
+body {
+  background: $background;
+}
+
+.error {
+  color: #CF0000;
+  width: 100%;
+  text-align: initial;
+}
+
+
+
+@import "header";
+@import "common";
+@import 'home';
+@import "login";
+@import "users";
+@import "modal";
+@import "details";
+@import "reports";

@@ -1,0 +1,53 @@
+header {
+  background: #fff;
+  height: 120px;
+  display: flex;
+  padding: 5px 60px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 25px;
+
+  a {
+    img {
+      max-height: 110px;
+    }
+  }
+
+  .active {
+    border-bottom: 2px solid $primary-color;
+    color: $primary-color;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline;
+      margin-right: 110px;
+      height: 50px;
+
+      a {
+        color: black;
+        text-decoration: unset;
+
+        &:hover {
+          border-bottom: 2px solid $primary-color;
+        }
+      }
+    }
+  }
+  .user-info {
+    div {
+      display: flex;
+      justify-content: flex-end;
+      button {
+        text-decoration: none;
+        background: unset;
+        border: unset;
+        color: #CF0000;
+        cursor: pointer;
+      }
+    }
+  }
+}

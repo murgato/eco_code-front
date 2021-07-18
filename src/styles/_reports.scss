@@ -1,0 +1,21 @@
+.container-reports{
+  @include container;
+  select {
+    @include input;
+    width: 350px;
+    margin-right: 10px;
+  }
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+    > div{
+      border: 1px solid $border-color ;
+      padding: 25px;
+      border-radius: $border-radius;
+      margin: 10px;
+    }
+  }
+  span {
+    font-weight: bold;
+  }
+}

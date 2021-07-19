@@ -35,7 +35,7 @@ const Details = () => {
         getData();
         getData1();
         console.log(occurrence)
-    }, [occurrence, id])
+    }, [])
     const handleAlterStatus = async () => {
         const response = await api.post(`/denunciations/details/update/status/${id}/${selected}`)
         if (response.status === 200) {
@@ -46,8 +46,22 @@ const Details = () => {
     const handleChange = (e) => {
         let {value} = e.target;
         setSelected(value);
-
     }
+
+    const handleExport = async () => {
+        const response = await api.get(`/export/file/${id}`);
+        if (response.status === 200) {
+            window.open(
+                response.request.responseURL,
+                '_blank'
+            );
+            console.log(response)
+        } else {
+            console.log("erro")
+            console.log(response)
+        }
+    }
+
     if (occurrence.denunciation_user != null) {
         return (
             <>
@@ -55,7 +69,7 @@ const Details = () => {
                 <div className="container-details">
                     <div className="row">
                         <h1>Detalhes da ocorrência #{occurrence.code}</h1>
-                        <button>Download imagens</button>
+                        <button onClick={handleExport}>Download imagens</button>
                         <button onClick={handleAlterStatus}>Salvar</button>
                     </div>
                     <div className="row">
@@ -116,13 +130,13 @@ const Details = () => {
                         </div>
                         <div>
                             <span>Telefone principal: </span>
-                            <span>{occurrence.denunciation_contact[0].number}</span>
+                            <span>{occurrence.denunciation_contact[0] != undefined ? occurrence.denunciation_contact[0].number:''}</span>
                         </div>
                     </div>
                     <div className="row">
                         <div className="row">
                             <span>Outros telefones: </span>
-                            {occurrence.denunciation_contact[1].number}
+                            {occurrence.denunciation_contact[1] != undefined ? occurrence.denunciation_contact[1].number:''}
                         </div>
                     </div>
                     <div className="row">
